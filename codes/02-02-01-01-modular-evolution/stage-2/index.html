@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modular evolution stage 2</title>
+</head>
+<body>
+  <h1>模块化演变（第二阶段）</h1>
+  <h2>每个模块只暴露一个全局对象，所有模块成员都挂载到这个对象中</h2>
+  <p>
+    具体做法就是在第一阶段的基础上，通过将每个模块「包裹」为一个全局对象的形式实现，
+    有点类似于为模块内的成员添加了「命名空间」的感觉。
+  </p>
+  <p>
+    通过「命名空间」减小了命名冲突的可能，
+    但是同样没有私有空间，所有模块成员也可以在模块外部被访问或者修改，
+    而且也无法管理模块之间的依赖关系。
+  </p>
+  <script src="module-a.js"></script>
+  <script src="module-b.js"></script>
+  <script>
+    moduleA.method1()
+    moduleB.method1()
+    // 模块成员可以被修改
+    moduleA.name = 'foo'
+  </script>
+</body>
+</html>

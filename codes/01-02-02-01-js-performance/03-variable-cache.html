@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>缓存全局变量</title>
+</head>
+<body>
+  <input type="button" value="btn" id="btn1">
+  <input type="button" value="btn" id="btn2">
+  <input type="button" value="btn" id="btn3">
+  <input type="button" value="btn" id="btn4">
+  <p>1111</p>
+  <input type="button" value="btn" id="btn5">
+  <input type="button" value="btn" id="btn6">
+  <p>222</p>
+  <input type="button" value="btn" id="btn7">
+  <input type="button" value="btn" id="btn8">
+  <p>333</p>
+  <input type="button" value="btn" id="btn9">
+  <input type="button" value="btn" id="btn10">
+
+  <script>
+    function getBtn() {
+      let oBtn1 = document.getElementById('btn1')
+      let oBtn3 = document.getElementById('btn3')
+      let oBtn5 = document.getElementById('btn5')
+      let oBtn7 = document.getElementById('btn7')
+      let oBtn9 = document.getElementById('btn9')
+    }
+
+    function getBtn2() {
+      let obj = document
+      let oBtn1 = obj.getElementById('btn1')
+      let oBtn3 = obj.getElementById('btn3')
+      let oBtn5 = obj.getElementById('btn5')
+      let oBtn7 = obj.getElementById('btn7')
+      let oBtn9 = obj.getElementById('btn9')
+    }
+  </script>
+
+</body>
+</html>

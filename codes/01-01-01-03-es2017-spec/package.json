@@ -1,0 +1,10 @@
+{
+  "name": "es2017-spec",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "zce <w@zce.me> (https://zce.me)",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}

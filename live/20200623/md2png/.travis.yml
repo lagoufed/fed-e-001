@@ -1,0 +1,21 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - lts/*
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+before_script:
+  - npm i nyc codecov -g
+
+script:
+  - npm run lint
+  - npm run test
+
+after_script:
+  - nyc report --reporter=text-lcov > coverage.lcov && codecov

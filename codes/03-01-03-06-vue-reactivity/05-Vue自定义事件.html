@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue 自定义事件</title>
+</head>
+<body>
+  <script src="./js/vue.js"></script>
+  <script>
+    // Vue 自定义事件
+    let vm = new Vue()
+    // { 'click': [fn1, fn2], 'change': [fn] }
+
+    // 注册事件(订阅消息)
+    vm.$on('dataChange', () => {
+      console.log('dataChange')
+    })
+
+    vm.$on('dataChange', () => {
+      console.log('dataChange1')
+    })
+    // 触发事件(发布消息)
+    vm.$emit('dataChange')
+  </script>
+</body>
+</html>

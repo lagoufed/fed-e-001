@@ -1,0 +1,44 @@
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'pages';
+  src: url('../fonts/pages.eot?yfqoab');
+  src: url('../fonts/pages.eot?yfqoab#iefix') format('embedded-opentype'),
+  url('../fonts/pages.ttf?yfqoab') format('truetype'),
+  url('../fonts/pages.woff?yfqoab') format('woff'),
+  url('../fonts/pages.svg?yfqoab#pages') format('svg');
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-family: 'pages' !important;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+}
+
+.icon-aperture:before {
+  content: '\e900';
+}
+
+.icon-github:before {
+  content: '\e901';
+}
+
+.icon-heart:before {
+  content: '\e902';
+}
+
+.icon-send:before {
+  content: '\e903';
+}
+
+.icon-twitter:before {
+  content: '\e904';
+}

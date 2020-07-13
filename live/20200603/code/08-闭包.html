@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function fn (name) {
+      return function () {
+        console.log(name)
+      }
+    }
+
+    // 1. fn 外部对内部有引用
+    // 2. 在另一个作用域访问到 fn 作用域中的局部成员
+
+    let func = fn('zs')
+    console.dir(func)
+    func()
+
+
+
+  </script>
+</body>
+</html>

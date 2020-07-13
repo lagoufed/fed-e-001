@@ -1,0 +1,13 @@
+{
+  "name": "20200522",
+  "version": "0.1.0",
+  "description": "~",
+  "author": "zce <w@zce.me> (https://zce.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

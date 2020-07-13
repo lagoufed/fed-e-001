@@ -1,0 +1,13 @@
+{
+  "name": "grunt-use-plugin",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "zce <w@zce.me> (https://zce.me)",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.4"
+  },
+  "dependencies": {
+    "grunt-contrib-clean": "^2.0.0"
+  }
+}

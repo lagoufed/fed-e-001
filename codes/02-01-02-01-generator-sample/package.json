@@ -1,0 +1,10 @@
+{
+  "name": "generator-sample",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "zce <w@zce.me> (https://zce.me)",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^4.0.1"
+  }
+}

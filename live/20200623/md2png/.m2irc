@@ -1,0 +1,5 @@
+html: |
+  <link rel="stylesheet" href="https://cdn.zce.me/markdown.css">
+  <link rel="stylesheet" href="https://unpkg.com/prismjs/themes/prism-okaidia.css">
+  <article class="markdown-body" style="padding: 2.5em">${content.trim()}</article>
+  <script src="https://unpkg.com/prismjs"></script>

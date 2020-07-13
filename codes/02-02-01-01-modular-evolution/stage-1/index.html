@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modular evolution stage 1</title>
+</head>
+<body>
+  <h1>模块化演变（第一阶段）</h1>
+  <h2>基于文件的划分模块的方式</h2>
+  <p>
+    具体做法就是将每个功能及其相关状态数据各自单独放到不同的文件中，
+    约定每个文件就是一个独立的模块，
+    使用某个模块就是将这个模块引入到页面中，然后直接调用模块中的成员（变量 / 函数）
+  </p>
+  <p>
+    缺点十分明显：
+    所有模块都直接在全局工作，没有私有空间，所有成员都可以在模块外部被访问或者修改，
+    而且模块一段多了过后，容易产生命名冲突，
+    另外无法管理模块与模块之间的依赖关系
+  </p>
+  <script src="module-a.js"></script>
+  <script src="module-b.js"></script>
+  <script>
+    // 命名冲突
+    method1()
+    // 模块成员可以被修改
+    name = 'foo'
+  </script>
+</body>
+</html>

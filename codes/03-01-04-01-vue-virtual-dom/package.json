@@ -1,0 +1,14 @@
+{
+  "name": "snabbdom-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "snabbdom": "^0.7.4"
+  }
+}

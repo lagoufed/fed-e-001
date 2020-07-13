@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Proxy</title>
+</head>
+<body>
+  <div id="app">
+    hello
+  </div>
+  <script>
+    // 模拟 Vue 中的 data 选项
+    let data = {
+      msg: 'hello',
+      count: 0
+    }
+
+    // 模拟 Vue 实例
+    let vm = new Proxy(data, {
+      // 执行代理行为的函数
+      // 当访问 vm 的成员会执行
+      get (target, key) {
+        console.log('get, key: ', key, target[key])
+        return target[key]
+      },
+      // 当设置 vm 的成员会执行
+      set (target, key, newValue) {
+        console.log('set, key: ', key, newValue)
+        if (target[key] === newValue) {
+          return
+        }
+        target[key] = newValue
+        document.querySelector('#app').textContent = target[key]
+      }
+    })
+
+    // 测试
+    vm.msg = 'Hello World'
+    console.log(vm.msg)
+  </script>
+</body>
+</html>

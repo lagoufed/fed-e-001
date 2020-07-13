@@ -1,0 +1,95 @@
+{% set current = 'features' %}
+{% extends 'layouts/basic.html' %}
+{% import 'partials/tags.html' as tags %}
+
+{% block body %}
+<main class="site-main" role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Features</h1>
+      <p class="lead text-muted">Features Demo</p>
+    </div>
+  </section>
+
+  <div class="py-5 bg-light">
+    <div class="container text-center">
+      <h3>SVG Icons</h3>
+      <p class="w-25 mx-auto mb-5">
+        {{ tags.svg('alipay') }}
+        {{ tags.svg('bilibili') }}
+        {{ tags.svg('bitcoin') }}
+        {{ tags.svg('btc') }}
+        {{ tags.svg('codepen') }}
+        {{ tags.svg('facebook') }}
+        {{ tags.svg('facebook-f') }}
+        {{ tags.svg('facebook-messenger') }}
+        {{ tags.svg('facebook-square') }}
+        {{ tags.svg('free-code-camp') }}
+        {{ tags.svg('get-pocket') }}
+        {{ tags.svg('github') }}
+        {{ tags.svg('github-alt') }}
+        {{ tags.svg('github-square') }}
+        {{ tags.svg('gitlab') }}
+        {{ tags.svg('google') }}
+        {{ tags.svg('google-drive') }}
+        {{ tags.svg('google-play') }}
+        {{ tags.svg('google-plus') }}
+        {{ tags.svg('google-plus-g') }}
+        {{ tags.svg('google-plus-square') }}
+        {{ tags.svg('google-wallet') }}
+        {{ tags.svg('instagram') }}
+        {{ tags.svg('jsfiddle') }}
+        {{ tags.svg('linkedin') }}
+        {{ tags.svg('linkedin-in') }}
+        {{ tags.svg('medium') }}
+        {{ tags.svg('medium-m') }}
+        {{ tags.svg('npm') }}
+        {{ tags.svg('pinterest') }}
+        {{ tags.svg('pinterest-p') }}
+        {{ tags.svg('pinterest-square') }}
+        {{ tags.svg('qq') }}
+        {{ tags.svg('qzone') }}
+        {{ tags.svg('readme') }}
+        {{ tags.svg('renren') }}
+        {{ tags.svg('skype') }}
+        {{ tags.svg('slack') }}
+        {{ tags.svg('slack-hash') }}
+        {{ tags.svg('stack-overflow') }}
+        {{ tags.svg('steam') }}
+        {{ tags.svg('steam-square') }}
+        {{ tags.svg('steam-symbol') }}
+        {{ tags.svg('tencent-weibo') }}
+        {{ tags.svg('tumblr') }}
+        {{ tags.svg('tumblr-square') }}
+        {{ tags.svg('twitter') }}
+        {{ tags.svg('twitter-square') }}
+        {{ tags.svg('vimeo') }}
+        {{ tags.svg('vimeo-square') }}
+        {{ tags.svg('vimeo-v') }}
+        {{ tags.svg('weibo') }}
+        {{ tags.svg('weixin') }}
+        {{ tags.svg('whatsapp') }}
+        {{ tags.svg('whatsapp-square') }}
+        {{ tags.svg('wordpress') }}
+        {{ tags.svg('wordpress-simple') }}
+        {{ tags.svg('xbox') }}
+        {{ tags.svg('youku') }}
+        {{ tags.svg('youku-icon') }}
+        {{ tags.svg('youtube') }}
+        {{ tags.svg('youtube-square') }}
+        {{ tags.svg('zhihu') }}
+      </p>
+      <h3>Font Icons</h3>
+      <p class="w-25 mx-auto mb-5">
+        {{ tags.icon('aperture') }}
+        {{ tags.icon('github') }}
+        {{ tags.icon('heart') }}
+        {{ tags.icon('send') }}
+        {{ tags.icon('twitter') }}
+      </p>
+    </div>
+  </div>
+
+</main>
+{% endblock %}

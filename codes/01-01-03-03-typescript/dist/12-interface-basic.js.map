@@ -1,0 +1,1 @@
+{"version":3,"file":"12-interface-basic.js","sourceRoot":"","sources":["../src/12-interface-basic.ts"],"names":[],"mappings":";AAAA,KAAK;;AASL,SAAS,SAAS,CAAE,IAAU;IAC5B,OAAO,CAAC,GAAG,CAAC,IAAI,CAAC,KAAK,CAAC,CAAA;IACvB,OAAO,CAAC,GAAG,CAAC,IAAI,CAAC,OAAO,CAAC,CAAA;AAC3B,CAAC;AAED,SAAS,CAAC;IACR,KAAK,EAAE,kBAAkB;IACzB,OAAO,EAAE,uBAAuB;CACjC,CAAC,CAAA"}

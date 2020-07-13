@@ -1,0 +1,10 @@
+{
+  "name": "02-configuration-file",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "zce <w@zce.me> (https://zce.me)",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^1.26.3"
+  }
+}

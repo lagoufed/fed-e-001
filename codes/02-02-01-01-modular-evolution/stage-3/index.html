@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modular evolution stage 3</title>
+</head>
+<body>
+  <h1>模块化演变（第三阶段）</h1>
+  <h2>使用立即执行函数表达式（IIFE：Immediately-Invoked Function Expression）为模块提供私有空间</h2>
+  <p>
+    具体做法就是将每个模块成员都放在一个函数提供的私有作用域中，
+    对于需要暴露给外部的成员，通过挂在到全局对象上的方式实现
+  </p>
+  <p>
+    有了私有成员的概念，私有成员只能在模块成员内通过闭包的形式访问。
+  </p>
+  <script src="module-a.js"></script>
+  <script src="module-b.js"></script>
+  <script>
+    moduleA.method1()
+    moduleB.method1()
+    // 模块私有成员无法访问
+    console.log(moduleA.name) // => undefined
+  </script>
+</body>
+</html>

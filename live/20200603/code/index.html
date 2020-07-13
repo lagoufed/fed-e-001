@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>debounce</title>
+</head>
+<body>
+  <input id="keywords" type="text">
+  <script src="./node_modules/lodash/lodash.js"></script>
+  <script src="./scripts/jsonp.js"></script>
+  <script>
+    let wd = null
+    const keywords = document.querySelector('#keywords')
+    // keywords.oninput = function () {
+    //   let wd = this.value
+    //   let url = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=31623,1465,31326,21109,31069,31779,31463,31715,30823,22160&wd=${wd}&req=2&csor=2&pwd=a&_=1591065391073`
+
+    //   jsonp(url, (err, data) => {
+    //     console.log(data)
+    //   })
+    // }
+
+    // debounce
+    keywords.oninput = _.debounce(function () {
+      let wd = this.value
+      let url = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=31623,1465,31326,21109,31069,31779,31463,31715,30823,22160&wd=${wd}&req=2&csor=2&pwd=a&_=1591065391073`
+
+      jsonp(url, (err, data) => {
+        console.log(data)
+      })
+    }, 300)
+  </script>
+</body>
+</html>

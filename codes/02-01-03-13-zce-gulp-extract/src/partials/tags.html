@@ -1,0 +1,9 @@
+{% macro svg(name, className, size) %}
+<svg class="{{ className | default('icon') }}" width="{{ size | default(16) }}" height="{{ size | default(16) }}" fill="currentColor" aria-hidden="true">
+  <use xlink:href="assets/images/brands.svg#{{ name }}"></use>
+</svg>
+{% endmacro %}
+
+{% macro icon(name) %}
+<i class="icon-{{ name }}"></i>
+{% endmacro %}

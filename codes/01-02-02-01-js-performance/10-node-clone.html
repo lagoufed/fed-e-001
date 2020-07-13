@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>克隆优化节点操作</title>
+</head>
+<body>
+  <p id="box1">old</p>
+
+  <script>
+
+    for (var i = 0; i < 3; i++) {
+      var oP = document.createElement('p')
+      oP.innerHTML = i 
+      document.body.appendChild(oP)
+    }
+
+    var oldP = document.getElementById('box1')
+    for (var i = 0; i < 3; i++) {
+      var newP = oldP.cloneNode(false)
+      newP.innerHTML = i 
+      document.body.appendChild(newP)
+    }
+
+  </script>
+
+</body>
+</html>

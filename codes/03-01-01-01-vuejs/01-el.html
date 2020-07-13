@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>render</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>公司名称：{{ company.name }}</p>
+        <p>公司地址：{{ company.address }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                company: {
+                    name: '拉勾',
+                    address: '中关村创业大街籍海楼4层'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

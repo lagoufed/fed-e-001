@@ -1,0 +1,50 @@
+{
+  "name": "md2png",
+  "version": "0.1.0",
+  "description": "Awesome node module",
+  "keywords": [
+    "md2png",
+    "cli",
+    "zce"
+  ],
+  "homepage": "https://github.com/zce/md2png#readme",
+  "bugs": {
+    "url": "https://github.com/zce/md2png/issues"
+  },
+  "license": "MIT",
+  "author": "zce <w@zce.me> (https://zce.me)",
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "bin": "bin/md2png.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zce/md2png.git"
+  },
+  "scripts": {
+    "lint": "standard --fix",
+    "test": "nyc ava"
+  },
+  "dependencies": {
+    "commander": "^5.1.0",
+    "cosmiconfig": "^6.0.0",
+    "inquirer": "^7.2.0",
+    "marked": "^1.1.0",
+    "puppeteer": "^4.0.0"
+  },
+  "devDependencies": {
+    "ava": "^3.9.0",
+    "nyc": "^15.1.0",
+    "standard": "^14.3.4"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "preferGlobal": true
+}

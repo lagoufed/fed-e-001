@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modular evolution stage 4</title>
+</head>
+<body>
+  <h1>模块化演变（第四阶段）</h1>
+  <h2>利用 IIFE 参数作为依赖声明使用</h2>
+  <p>
+    具体做法就是在第三阶段的基础上，利用立即执行函数的参数传递模块依赖项。
+  </p>
+  <p>
+    这使得每一个模块之间的关系变得更加明显。
+  </p>
+  <script src="https://unpkg.com/jquery"></script>
+  <script src="module-a.js"></script>
+  <script src="module-b.js"></script>
+  <script>
+    moduleA.method1()
+    moduleB.method1()
+  </script>
+</body>
+</html>
