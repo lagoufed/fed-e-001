@@ -1,0 +1,54 @@
+body {
+  background-color: #181a1b;
+  color: #fff;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.left {
+  float: left;
+}
+.l30 {
+  margin-left: 100px;
+}
+.right {
+  float: right;
+}
+.content {
+  width: 600px;
+  margin: 0 auto;
+}
+.btn-group {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.close {
+  cursor: pointer;
+}
+.btn {
+  height: 30px;
+  line-height: 30px;
+  margin: 30px;
+  width: 80px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 13px;
+  cursor: pointer;
+  display: inline-block;
+}
+li.hero {
+  height: 40px;
+  border: 1px solid #ccc;
+  line-height: 40px;
+  padding: 0 10px;
+  margin-top: -1px;
+  opacity: 1;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  transition: all 2s linear;
+}

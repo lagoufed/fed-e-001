@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>virtualdom</title>
+</head>
+<body>
+  <div id="app">
+  </div>
+
+  <script src="../../dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      render (h) {
+        // h(tag, data, children)
+        // return h('h1', this.msg)
+        // return h('h1', { domProps: { innerHTML: this.msg } })
+        // return h('h1', { attrs: { id: 'title' } }, this.msg)
+        const vnode = h(
+          'h1', 
+          { 
+            attrs: { id: 'title' } 
+          },
+          this.msg
+        )
+        console.log(vnode)
+        return null
+      },
+      data: {
+        msg: 'Hello Vue'
+      }
+    })
+  </script>
+</body>
+</html>

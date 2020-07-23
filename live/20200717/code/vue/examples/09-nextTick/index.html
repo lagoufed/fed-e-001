@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nextTick</title>
+</head>
+<body>
+  <div id="app">
+    <p id="p" ref="p1">{{ msg }}</p>
+    {{ name }}<br>
+    {{ title }}<br>
+  </div>
+  <script src="../../dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'Hello nextTick',
+        name: 'Vue.js',
+        title: 'Title'
+      },
+      mounted() {
+        this.msg = 'Hello World'
+        this.name = 'Hello snabbdom'
+        this.title = 'Vue.js'
+  
+        Vue.nextTick(() => {
+          console.log(this.$refs.p1.textContent)
+        })
+      }
+    })
+
+    
+  </script>
+</body>
+</html>

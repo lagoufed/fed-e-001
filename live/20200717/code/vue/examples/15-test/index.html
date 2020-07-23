@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Runtime+Compiler</title>
+  <style>
+    body {
+        background: #fafafa;
+        font-family: sans-serif;
+      }
+      h1 {
+        font-weight: normal;
+      }
+      .btn {
+        display: inline-block;
+        cursor: pointer;
+        background: #fff;
+        box-shadow: 0 0 1px rgba(0, 0, 0, .2);
+        padding: .5em .8em;
+        transition: box-shadow .05s ease-in-out;
+        -webkit-transition: box-shadow .05s ease-in-out;
+      }
+      .btn:hover {
+        box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+      }
+      .btn:active, .active, .active:hover {
+        box-shadow: 0 0 1px rgba(0, 0, 0, .2),
+                    inset 0 0 4px rgba(0, 0, 0, .1);
+      }
+      .add {
+        float: right;
+      }
+      #container {
+        max-width: 42em;
+        margin: 0 auto 2em auto;
+      }
+      .list {
+        position: relative;
+      }
+      .row {
+        overflow: hidden;
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        left: 0px;
+        margin: .5em 0;
+        padding: 1em;
+        background: #fff;
+        box-shadow: 0 0 1px rgba(0, 0, 0, .2);
+        transition: transform .5s ease-in-out, opacity .5s ease-out, left .5s ease-in-out;
+        -webkit-transition: transform .5s ease-in-out, opacity .5s ease-out, left .5s ease-in-out;
+      }
+      .row div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .row > div:nth-child(1) {
+        width: 5%;
+      }
+      .row > div:nth-child(2) {
+        width: 30%;
+      }
+      .row > div:nth-child(3) {
+        width: 65%;
+      }
+      .rm-btn {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #C25151;
+        width: 1.4em;
+        height: 1.4em;
+        text-align: center;
+        line-height: 1.4em;
+        padding: 0;
+      }
+  </style>
+</head>
+<body>
+  <div id="app">
+    Hello World
+  </div>
+
+  <script src="../../dist/vue.runtime.js"></script>
+  <script>
+    var vnode;
+
+    var nextKey = 11;
+    var margin = 8;
+    var sortBy = 'rank';
+    var totalHeight = 0;
+    var originalData = [
+      {rank: 1, title: 'The Shawshank Redemption', desc: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', elmHeight: 0},
+      {rank: 2, title: 'The Godfather', desc: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.', elmHeight: 0},
+      {rank: 3, title: 'The Godfather: Part II', desc: 'The early life and career of Vito Corleone in 1920s New York is portrayed while his son, Michael, expands and tightens his grip on his crime syndicate stretching from Lake Tahoe, Nevada to pre-revolution 1958 Cuba.', elmHeight: 0},
+      {rank: 4, title: 'The Dark Knight', desc: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.', elmHeight: 0},
+      {rank: 5, title: 'Pulp Fiction', desc: 'The lives of two mob hit men, a boxer, a gangster\'s wife, and a pair of diner bandits intertwine in four tales of violence and redemption.', elmHeight: 0},
+      {rank: 6, title: 'Schindler\'s List', desc: 'In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.', elmHeight: 0},
+      {rank: 7, title: '12 Angry Men', desc: 'A dissenting juror in a murder trial slowly manages to convince the others that the case is not as obviously clear as it seemed in court.', elmHeight: 0},
+      {rank: 8, title: 'The Good, the Bad and the Ugly', desc: 'A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.', elmHeight: 0},
+      {rank: 9, title: 'The Lord of the Rings: The Return of the King', desc: 'Gandalf and Aragorn lead the World of Men against Sauron\'s army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.', elmHeight: 0},
+      {rank: 10, title: 'Fight Club', desc: 'An insomniac office worker looking for a way to change his life crosses paths with a devil-may-care soap maker and they form an underground fight club that evolves into something much, much more...', elmHeight: 0},
+    ];
+    // 如果同时设置template和render此时会渲染什么？
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        data: [
+          originalData[0],
+          originalData[1],
+          originalData[2],
+          originalData[3],
+          originalData[4],
+          originalData[5],
+          originalData[6],
+          originalData[7],
+          originalData[8],
+          originalData[9]
+        ]
+      },
+      methods: {
+       remove (movie) {
+          this.data = this.data.filter((m) => { return m !== movie; });
+        },
+        add () {
+          var n = originalData[Math.floor(Math.random() * 10)];
+          this.data.push({rank: nextKey++, title: n.title, desc: n.desc, elmHeight: 0})
+          console.log(this.data)
+        },
+        changeSort(prop, data) {
+          sortBy = prop;
+          this.data.sort((a, b) => {
+            if (a[prop] > b[prop]) {
+              return 1;
+            }
+            if (a[prop] < b[prop]) {
+              return -1;
+            }
+            return 0;
+          });
+        },
+        movieView(movie, h) {
+          return h('div', {
+            class: ['row'],
+            key: movie.rank,
+            style: {opacity: '0', transform: 'translate(-200px)',
+                    transform: `translateY(${movie.offset}px)`, opacity: '1',
+                    remove: {opacity: '0', transform: `translateY(${movie.offset}px) translateX(200px)`}},
+            hook: {insert: (vnode) => { 
+              console.log(vnode.elm.offsetHeight)
+              
+              movie.elmHeight = vnode.elm.offsetHeight; }},
+          }, [
+            h('div', {style: {fontWeight: 'bold'}}, movie.rank),
+            h('div', movie.title),
+            h('div', movie.desc),
+            h('div', {class: ['btn', 'rm-btn'], on: {click: [this.remove, movie]}}, 'x'),
+          ]);
+        }
+      },
+      mounted() {
+        this.data = this.data.reduce((acc, m) => {
+          var last = acc[acc.length - 1];
+          m.offset = last ? last.offset + last.elmHeight + margin : margin;
+          return acc.concat(m);
+        }, []);
+        totalHeight = this.data[this.data.length - 1].offset + this.data[this.data.length - 1].elmHeight;
+      },
+      render(h) {
+       
+        return h('div', [
+          h('h1', 'Top 10 movies'),
+          h('div', [
+            h('a', {class: ['btn', 'add'], on: {click: this.add}}, 'Add'),
+            'Sort by: ',
+            h('span', { class: ['btn-group']}, [
+              h('a', {class: {active: sortBy === 'rank'}, class: ['btn', 'rank'], on: {click: [this.changeSort, 'rank', this.data]}}, 'Rank'),
+              h('a', {class: {active: sortBy === 'title'}, class: ['btn', 'title'], on: {click: [this.changeSort, 'title', this.data]}}, 'Title'),
+              h('a', {class: {active: sortBy === 'desc'}, class: ['btn', 'desc'], on: {click: [this.changeSort, 'desc', this.data]}}, 'Description'),
+            ]),
+          ]),
+          h('div', {class: ['list'], style: {height: totalHeight+'px'}}, this.data.map((movie) => {
+            return this.movieView(movie, h)
+          })),
+        ]);
+      }
+    })
+  </script>
+</body>
+</html>

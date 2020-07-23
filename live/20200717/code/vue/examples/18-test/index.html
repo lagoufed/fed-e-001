@@ -1,0 +1,35 @@
+<div id="app">
+  <button @click="onClick">按钮</button>
+<ul>
+  <li v-for="item in arr">{{ item }}</li>
+</ul>
+</div>
+
+<script src="../../dist/vue.js"></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      arr: [1, 2, 3],
+      obj: {
+        name: 'zs'
+      }
+    },
+    // created() {
+    //   this.arr[0] = '9'
+    // },
+    // mounted() {
+      
+    // },
+    methods: {
+      onClick () {
+        // 不是响应式的
+        // this.arr[0] = 0
+
+        this.arr.splice(0, 1, 0)
+        
+        // this.arr = [0, 8, 9]
+      }
+    }
+  })
+</script>

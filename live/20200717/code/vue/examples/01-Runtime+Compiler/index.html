@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Runtime+Compiler</title>
+</head>
+<body>
+  <div id="app">
+    Hello World
+  </div>
+
+  <script src="../../dist/vue.runtime.js"></script>
+  <script>
+    // compiler
+    // 需要编译器，把 template 转换成 render 函数
+    // const vm = new Vue({
+    //   el: '#app',
+    //   template: '<h1>{{ msg }}</h1>',
+    //   data: {
+    //     msg: 'Hello Vue'
+    //   }
+    // })
+
+    const vm = new Vue({
+      el: '#app',
+      // template: '<h1>{{ msg }}</h1>',
+      render(h) {
+        return h('h1', this.msg)
+      },
+      data: {
+        msg: 'Hello Vue'
+      }
+    })
+
+
+
+    // 如果同时设置template和render此时会渲染什么？
+    const vm = new Vue({
+      el: '#app',
+      template: '<h1>Hello Template</h1>',
+      render(h) {
+        return h('h1', 'Hello Render')
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>key</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="handler">按钮</button>
+    <ul>
+      <li v-for="value in arr" :key="value">{{value}}</li>
+    </ul>
+  </div>
+  <script src="../../dist/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        arr: ['a', 'b', 'c', 'd']
+      },
+      methods: {
+        handler () {
+          this.arr.splice(1, 0, 'x')
+          // this.arr = ['a', 'x', 'b', 'c', 'd']
+        }
+      }
+    })
+  </script>
+</body>
+</html>
