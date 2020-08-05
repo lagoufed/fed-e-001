@@ -1,1 +1,0 @@
-"use strict";!function(t,e){e.querySelector("#btn").addEventListener("click",function(){alert(Date.now())})}(window,document);
