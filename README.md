@@ -28,4 +28,4 @@
 
 ## 版权说明
 
-&copy; 2020 [拉勾教育](https://kaiwu.lagou.com), 保留一切权利.
+&copy; 2020 [拉勾教育](https://edu.lagou.com), 保留一切权利.
