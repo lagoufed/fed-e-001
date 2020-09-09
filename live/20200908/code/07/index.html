@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="input" type="text">
+  <script src="./node_modules/lodash/lodash.js"></script>
+  <script>
+    const input = document.querySelector('#input')
+  
+    input.addEventListener('input', debounce(() => {
+      // 发请求获取联想建议
+      console.log(input.value)
+    }, 1000))
+
+    // debounce 方法
+    function debounce (callback, time) {
+      let timer = null // 定时器 id
+      return function () {
+        clearTimeout(timer) // 清楚定时器
+        
+        timer = setTimeout(() => { // 记录定时器 id
+          callback()
+        }, time)
+      }
+    }
+
+    // input.addEventListener('input', () => {
+    //   // 发请求获取联想建议
+    //   console.log(input.value)
+    // })
+  </script>
+</body>
+</html>

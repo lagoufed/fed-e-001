@@ -1,0 +1,10 @@
+{
+  "name": "08",
+  "private": true,
+  "version": "1.0.0",
+  "author": "lipengzhou <lpzmail@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
+}
