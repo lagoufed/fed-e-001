@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello",
+      "author": "typicode",
+      "category": 1
+    },
+    {
+      "id": 2,
+      "title": "world",
+      "author": "typicode",
+      "category": 2
+    },
+    {
+      "id": 3,
+      "title": "json-server3",
+      "author": "typicode",
+      "category": 3
+    },
+    {
+      "id": 4,
+      "title": "json-server4",
+      "author": "typicode",
+      "category": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "HTML"
+    },
+    {
+      "id": 2,
+      "name": "CSS"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

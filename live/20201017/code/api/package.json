@@ -1,0 +1,10 @@
+{
+  "name": "api",
+  "private": true,
+  "version": "1.0.0",
+  "author": "lipengzhou <lpzmail@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.16.2"
+  }
+}
